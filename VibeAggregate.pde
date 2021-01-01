@@ -1,11 +1,11 @@
 Program p;
 int counter = 0;
+ButtonSelector vibe1;
 ButtonSelector vibe6;
 boolean selected = false;
 void setup(){
-  fullScreen();
+  fullScreen(P3D);
   loadPixels();
-  
   for(int i = 0; i < width; i ++) {
     for(int j = 0; j < height; j ++) {
       float valToLerp = ((float)(j)/width);
@@ -16,7 +16,10 @@ void setup(){
   }
   updatePixels();
   textAlign(LEFT, TOP);
-  vibe6 = new ButtonSelector(new Vibe6(), "Vibe 6", 10, height/7, height/7-1);
+  vibe1 = new ButtonSelector(new Vibe1(), "Vibe 1", 10, height/7, height/7-10);
+  vibe2 = new ButtonSelector(new Vibe2(), "Vibe 2", 10, (height/7)*2, height/7-10);
+  vibe6 = new ButtonSelector(new Vibe6(), "Vibe 6", 10, (height/7)*6, height/7-10);
+
 }
 
 void draw(){
@@ -27,7 +30,8 @@ void draw(){
     text("Pick a vibe, any vibe.", 10, 30);
     fill(255, 0, 0);
     System.out.println("AAAA" + mouseX);
-    if(vibe6.display()){System.out.println("AAAA" + mouseX); p = vibe6.ret; selected = true; p.setup();}
+    if(vibe1.display()){p = vibe1.ret; selected = true; p.setup();}
+    if(vibe6.display()){p = vibe6.ret; selected = true; p.setup();}
   }
   else{
     p.draw();
