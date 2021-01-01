@@ -1,6 +1,6 @@
 class ButtonSelector{
   Program ret;
-  int x, y, size;
+  public int x, y, size;
   String name;
   public ButtonSelector(Program ret, String name, int x, int y, int size){
     this.ret = ret;
