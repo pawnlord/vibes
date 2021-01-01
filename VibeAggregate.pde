@@ -1,7 +1,6 @@
 Program p;
 int counter = 0;
-ButtonSelector vibe1;
-ButtonSelector vibe6;
+ButtonSelector vibe1, vibe2, vibe6;
 boolean selected = false;
 void setup(){
   fullScreen(P3D);
@@ -16,8 +15,8 @@ void setup(){
   }
   updatePixels();
   textAlign(LEFT, TOP);
-  vibe1 = new ButtonSelector(new Vibe1(), "Vibe 1", 10, height/7, height/7-10);
-  vibe2 = new ButtonSelector(new Vibe2(), "Vibe 2", 10, (height/7)*2, height/7-10);
+  vibe1 = new ButtonSelector(new Vibe1(), "Random Lines", 10, height/7, height/7-10);
+  vibe2 = new ButtonSelector(new Vibe2(), "Waves", 10, (height/7)*2, height/7-10);
   vibe6 = new ButtonSelector(new Vibe6(), "Vibe 6", 10, (height/7)*6, height/7-10);
 
 }
@@ -31,6 +30,7 @@ void draw(){
     fill(255, 0, 0);
     System.out.println("AAAA" + mouseX);
     if(vibe1.display()){p = vibe1.ret; selected = true; p.setup();}
+    if(vibe2.display()){p = vibe2.ret; selected = true; p.setup();}
     if(vibe6.display()){p = vibe6.ret; selected = true; p.setup();}
   }
   else{

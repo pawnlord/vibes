@@ -40,6 +40,7 @@ class Vibe2 implements Program{
     for(int i = 0; i < 20; i++){
       for(int j = 0; j < 20; j++){
         point(i*wid, j*wid, points[i][j]);
+        points[i][j] += sin(counter+i+j);
         if(i != 0 && i != 19 && j != 0 && j != 19){
           stroke(points[i][j]*2,
                 0,
