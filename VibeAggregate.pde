@@ -4,7 +4,17 @@ ButtonSelector vibe6;
 boolean selected = false;
 void setup(){
   fullScreen();
-
+  loadPixels();
+  
+  for(int i = 0; i < width; i ++) {
+    for(int j = 0; j < height; j ++) {
+      float valToLerp = ((float)(j)/width);
+      float lerpVal = lerp(0, 255, valToLerp);
+      
+      pixels[(j*width)+i] = color(lerpVal, 0, lerpVal);
+    }  
+  }
+  updatePixels();
   textAlign(LEFT, TOP);
   vibe6 = new ButtonSelector(new Vibe6(), "Vibe 6", 10, height/7, height/7-1);
 }
