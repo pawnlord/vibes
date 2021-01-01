@@ -1,9 +1,9 @@
-class StartProgram implements Program{
+class Vibe6 implements Program{
   Pattern1[] ps;
   float current = 0;
   int current_alpha;
   int dir = 1;
-  final int screenNumber = 70;
+  final int screenNumber = 10;
   
 
 
