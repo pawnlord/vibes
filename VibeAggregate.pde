@@ -1,19 +1,25 @@
-Program p = new Vibe6();
+Program p;
 int counter = 0;
-  ButtonSelector vbe6;
+ButtonSelector vibe6;
+boolean selected = false;
 void setup(){
   fullScreen();
 
   textAlign(LEFT, TOP);
-  vbe6 = new ButtonSelector(new Vibe6(), "Vibe 6", 10, height/7, height/7-1);
-  p.setup();
+  vibe6 = new ButtonSelector(new Vibe6(), "Vibe 6", 10, height/7, height/7-1);
 }
 
 void draw(){
-  p.draw();
-  counter++;
-  textSize((height/7)/2);
-  fill(255, 102, 153, 0);
-  text("Pick a vibe, any vibe.", 10, 30);
-    if(vbe6.display()){System.out.println((vbe6.y+vbe6.size) + "," + vbe6.x + "," + vbe6.y + "AAAA" + counter);}
+  if(!selected){
+    counter++;
+    textSize((height/7)/2);
+    fill(255, 102, 153);
+    text("Pick a vibe, any vibe.", 10, 30);
+    fill(255, 0, 0);
+    System.out.println("AAAA" + mouseX);
+    if(vibe6.display()){System.out.println("AAAA" + mouseX); p = vibe6.ret; selected = true; p.setup();}
+  }
+  else{
+    p.draw();
+  }
 }
