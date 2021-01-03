@@ -1,4 +1,4 @@
-class Vibe6 implements Program{
+class Vibe5 implements Program{
   Pattern1[] ps;
   float current = 0;
   int current_alpha;

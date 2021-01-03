@@ -26,5 +26,6 @@ class Vibe3 implements Program{
     angle+=0.5;
     col+=1;
     col%=255;
+     
   }
 }
